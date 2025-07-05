@@ -1,5 +1,11 @@
 import streamlit as st
+from data_loader import prepare_shapefile, maybe_download_visuals
 
+#set up files 
+maybe_download_visuals(st.sidebar.checkbox("Download visuals.ipynb?", value=False))
+prepare_shapefile()
+
+#load pages 
 st.set_page_config(
     page_title="Texas Food Insecurity Dashboard",
     layout="wide",
