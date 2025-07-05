@@ -7,13 +7,13 @@ st.title("Food Desert Tracts Across Texas Counties")
 st.markdown("This interactive map visualizes the number of food desert census tracts in each Texas county, using data from the USDA Food Access Research Atlas.")
 
 # Load and process shapefile
-county_shapefile = gpd.read_file("data/tx_counties.geojson")
+county_shapefile = gpd.read_file("Dashboard/data/tx_counties.geojson")
 county_shapefile = county_shapefile[county_shapefile['STATEFP'] == '48']
 county_shapefile.rename(columns={'NAME': 'County'}, inplace=True)
 county_shapefile['County'] = county_shapefile['County'].str.replace(' County', '', regex=False)
 
 # Load and group Atlas data
-atlas = pd.read_csv("data/usds_atlas_cleaned.csv")
+atlas = pd.read_csv("Dashboard/data/usds_atlas_cleaned.csv")
 atlas_grouped = atlas.groupby('County')[['LILATracts_1And10']].sum().reset_index()
 
 # Merge 

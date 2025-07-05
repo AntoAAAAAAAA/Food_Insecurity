@@ -11,7 +11,7 @@ st.markdown("Use the filters below to explore how food insecurity varies across 
 # Load merged data
 # data = pd.read_csv("../data/final_merged_notnormalized.csv")
 # data.columns = data.columns.str.strip()
-mmg = pd.read_csv("data/t19_23_cleaned.csv")
+mmg = pd.read_csv("Dashboard/data/t19_23_cleaned.csv")
 mmg['County'] = mmg['County, State'].str.split(',').str[0]
 sns.set(style="whitegrid")
 plt.rcParams.update({'figure.figsize': (10, 6)})
@@ -72,7 +72,7 @@ st.caption("This chart highlights counties with the highest average cost per mea
 
 
 # 4  FI Rate vs. Number of Food Desert Tracts
-atlas = pd.read_csv("data/usds_atlas_cleaned.csv")
+atlas = pd.read_csv("Dashboard/data/usds_atlas_cleaned.csv")
 fd_tracts = atlas.groupby('County')[['LILATracts_1And10']].sum().reset_index()
 mmg_fd = mmg.merge(fd_tracts, on='County', how='left')
 
