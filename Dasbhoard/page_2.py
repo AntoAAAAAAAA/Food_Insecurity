@@ -8,7 +8,7 @@ st.markdown("This interactive map visualizes the number of food desert census tr
 
 # Load and process shapefile
 county_shapefile = gpd.read_file("data/tx_counties.geojson")
-# county_shapefile = county_shapefile[county_shapefile['STATEFP'] == '48']
+county_shapefile = county_shapefile[county_shapefile['STATEFP'] == '48']
 county_shapefile.rename(columns={'NAME': 'County'}, inplace=True)
 county_shapefile['County'] = county_shapefile['County'].str.replace(' County', '', regex=False)
 
