@@ -72,7 +72,7 @@ st.caption("This chart highlights counties with the highest average cost per mea
 
 
 # 4  FI Rate vs. Number of Food Desert Tracts
-atlas = pd.read_csv("Dashboard/data/usds_atlas_cleaned.csv")
+atlas = pd.read_csv("data/usds_atlas_cleaned.csv")
 fd_tracts = atlas.groupby('County')[['LILATracts_1And10']].sum().reset_index()
 mmg_fd = mmg.merge(fd_tracts, on='County', how='left')
 
