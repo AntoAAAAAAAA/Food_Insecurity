@@ -7,7 +7,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-from Dashboard.data_loader import maybe_download_visuals
+from data_loader import maybe_download_visuals
 
 # Set up files AFTER set_page_config
 maybe_download_visuals(st.sidebar.checkbox("Download visuals.ipynb?", value=False))
