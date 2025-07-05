@@ -7,7 +7,7 @@ st.markdown("Select your county to see key metrics about food insecurity, SNAP a
 # Load data
 from pathlib import Path
 import pandas as pd
-data_path = Path(__file__).parent.parent /"Dashboard" / "data" / "final_merged_notnormalized.csv"
+data_path = Path(__file__).parent.parent / "data" / "final_merged_notnormalized.csv"
 data = pd.read_csv(data_path)
 
 data.columns = data.columns.str.strip()

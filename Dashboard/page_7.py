@@ -23,7 +23,7 @@ Vehicle access plays a key role in identifying these more vulnerable regions.
 A notable subset of food desert tracts also met the criteria for low vehicle access. These were most commonly found in rural counties or outer suburbs.
 """
 )
-grid = pd.read_csv('Dashboard/data/fd_and_lva_grid.csv')
+grid = pd.read_csv('data/fd_and_lva_grid.csv')
 st.table(grid)
 st.markdown("""
 
@@ -104,7 +104,7 @@ Some suburban counties showed alarmingly high proportions of food-insecure peopl
 Counties like Loving, Kenedy, and Kent counties stuck out as counties where there were large portions of people who were elgible for SNAP, yet had higher than expected rates of overall food insecurity. 
 """)
 #import data
-data = pd.read_csv('Dashboard/data/t19_23_cleaned.csv')
+data = pd.read_csv('data/t19_23_cleaned.csv')
 data.rename(columns={'County, State': 'County'}, inplace=True)
 
 #plot

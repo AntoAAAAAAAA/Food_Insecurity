@@ -11,7 +11,7 @@ st.markdown("Use the filters below to explore how food insecurity varies across 
 # Load merged data
 # data = pd.read_csv("../data/final_merged_notnormalized.csv")
 # data.columns = data.columns.str.strip()
-mmg = pd.read_csv("Dashboard/data/t19_23_cleaned.csv")
+mmg = pd.read_csv("data/t19_23_cleaned.csv")
 mmg['County'] = mmg['County, State'].str.split(',').str[0]
 sns.set(style="whitegrid")
 plt.rcParams.update({'figure.figsize': (10, 6)})
